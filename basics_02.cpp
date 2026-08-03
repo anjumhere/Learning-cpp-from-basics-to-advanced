@@ -25,12 +25,37 @@ int main() {
   //
   // cout << name.erase(0, 4);
   //
+  //
+  // int num = 10;
+  //
+  // for (int i = 0; i <= 100; i++) {
+  //   if (i == 20) {
+  //     continue;
+  //   }
+  //   cout << i << '\n';
+  // }
 
-  for (int i = 0; i <= 100; i++) {
-    if (i == 20) {
-      continue;
+  // generating shapes using nested loops;
+
+  int rows;
+  int columns;
+  char symbol;
+
+  cout << "Enter the Number of rows :";
+  cin >> rows;
+
+  cout << "Enter the Number of columns :";
+  cin >> columns;
+
+  cout << "Enter the symbol :";
+  cin >> symbol;
+
+  for (int i = 0; i <= rows; i++) {
+    for (int j = 0; j <= columns; j++) {
+      cout << symbol;
     }
-    cout << i << '\n';
+    cout << '\n';
   }
+
   return 0;
 }
