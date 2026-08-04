@@ -1,94 +1,111 @@
 #include <ctime>
 #include <iostream>
+
 using std::cin;
 using std::cout;
 using std::string;
 
-int userWins(string user, string comp_choice);
-int compWins(string user, string comp_choice);
+int playRound(string user, string comp_choice);
+string computerChoice();
 int main() {
-  srand(time(0));
-  int comp = rand() % 3 + 1;
-  string comp_choice;
-  string user;
 
-  switch (comp) {
-  case 1:
-    comp_choice = "Rock";
-    break;
+  int compScore = 0;
+  int userScore = 0;
 
-  case 2:
-    comp_choice = "Paper";
-    break;
+  // setting up a while loop for running the until game over (first person to
+  // reach score of 5 wins the game)
 
-  case 3:
-    comp_choice = "Scissors";
-    break;
+  while (compScore <= 4 && userScore <= 4) {
+
+    // getting random value
+
+    string compChoice = computerChoice();
+
+    // User Choice of rock , paper and scissors
+
+    string userChoice;
+    cout << "Choose: \n r ===> Rock\n p ===> Paper\n s ===> Scissors \n ====> ";
+    cin >> userChoice;
+
+    // Safety net for prevent users from giving input other than r= rock , p =
+    // paper , s = scissors;
+
+    if (userChoice != "r" && userChoice != "p" && userChoice != "s") {
+      cout << "Choose between (r => Rock | p => Paper | s => Scissors) \n";
+      break;
+    }
+    // score  and playround function which includes game rules too
+
+    int result = playRound(userChoice, compChoice);
+
+    // Updating Score
+
+    if (result == 1) {
+      userScore++;
+    } else if (result == -1) {
+      compScore++;
+    } else {
+      cout << "<<========================>> Its a "
+              "Tie <<=========================>>\n\n";
+    }
   }
 
-  //  call userWins;
-  //  call userWins;
-  cout << comp_choice << '\n';
-  cout << "Choose (r = Rock,p = Paper, s = Scissors)" << '\n';
-  cin >> user;
-  // tie
+  cout << "Computer Score  : " << compScore << '\n';
+  cout << "User Score  : " << userScore << '\n' << '\n';
 
-  if (comp_choice == "Rock" && user == "r") {
-    cout << "Its a tie\n";
-  } else if (comp_choice == "Paper" && user == "p") {
-    cout << "Its a tie\n";
-  } else if (comp_choice == "Scissors" && user == "s") {
-    cout << "Its a tie\n";
+  // Setting rules for game over;
+  if (userScore >= 5) {
+    cout << "**** User wins with " << userScore << " points " << "****" << '\n';
+  } else if (compScore >= 5) {
+    cout << "<<====>> Computer wins with " << compScore << " points "
+         << "<<====>>" << '\n';
   }
-  // compWins(user, comp_choice);
-  // userWins(user, comp_choice);
-  int compScore = compWins(user, comp_choice);
-  int userScore = userWins(user, comp_choice);
 
-  cout << "User Score = : " << userScore << '\n';
-  cout << "Computer Score = : " << compScore << '\n';
-
-  cout << "Game Over\n";
+  cout << "<<===============>> Game Over <<=================>>\n";
   return 0;
 }
 
-int userWins(string user, string comp_choice) {
+string computerChoice() {
+  srand(time(0));
+  int random = rand() % 3 + 1;
 
-  int user_score = 0;
+  // generating computer choice rock/paper/scissors
 
-  // user wins
+  string compChoice;
 
-  if (user == "r" && comp_choice == "Scissors") {
-    cout << "User Wins\n";
-    user_score++;
-  } else if (user == "p" && comp_choice == "Rock") {
-    cout << "User wins\n";
-
-    user_score++;
-  } else if (user == "s" && comp_choice == "Paper") {
-    cout << "User wins\n";
-
-    user_score++;
+  switch (random) {
+  case 1:
+    compChoice = "Rock";
+    break;
+  case 2:
+    compChoice = "Paper";
+    break;
+  case 3:
+    compChoice = "Scissors";
+    break;
   }
 
-  return user_score;
+  return compChoice;
 }
+int playRound(string user, string comp_choice) {
 
-int compWins(string user, string comp_choice) {
-  int computer_score = 0;
-  // computer wins
-  if (user == "s" && comp_choice == "Rock") {
-    cout << "Computer Wins\n";
-    computer_score++;
-  } else if (user == "r" && comp_choice == "Paper") {
-    cout << "Computer wins\n";
+  // Rules for the game
 
-    computer_score++;
-  } else if (user == "p" && comp_choice == "Scissors") {
-    cout << "Computer wins\n";
+  if ((user == "r" && comp_choice == "Rock") ||
+      (user == "p" && comp_choice == "Paper") ||
+      (user == "s" && comp_choice == "Scissors")) {
+    return 0; // tie
+  } else if ((user == "r" && comp_choice == "Scissors") ||
+             (user == "p" && comp_choice == "Rock") ||
+             (user == "s" && comp_choice == "Paper")) {
+    cout << "<<========================>> User "
+            "Wins <<=========================>>\n\n";
+    return 1; // user wins
+  } else {
 
-    computer_score++;
+    cout << "<<========================>> Computer "
+            "Wins <<=========================>>\n\n";
+
+    return -1; // computer wins
   }
-
-  return computer_score;
 }
