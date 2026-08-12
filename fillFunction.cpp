@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using std::cin;
 using std::cout;
@@ -16,11 +17,28 @@ int main() {
 
   // using fill();
 
+  /*
   string foods[100];
   fill(foods, foods + 100, "pizza");
   for (string food : foods) {
     cout << food << '\n';
   }
 
+
+  */
+
+  // fill an array
+
+  string items[5];
+  int size = sizeof(items) / sizeof(items[0]);
+
+  for (int i = 0; i < size; i++) {
+    cout << "Enter the item you want to add at # " << i << '\n';
+    std::getline(cin, items[i]);
+  }
+
+  for (string exp : items) {
+    cout << exp << '\n';
+  }
   return 0;
 }
