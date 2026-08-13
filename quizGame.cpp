@@ -1,3 +1,4 @@
+#include <cctype>
 #include <iostream>
 
 using std::cin;
@@ -18,13 +19,28 @@ int main() {
   char answerKey[] = {'C', 'D', 'B', 'D'};
   int size = sizeof(questions) / sizeof(questions[0]);
   char guess;
-  int score;
+  int score = 0;
 
   for (int i = 0; i < size; i++) {
     cout << questions[i] << '\n';
+    cout << "*********************************" << '\n';
     for (int j = 0; j < sizeof(options[i]) / sizeof(options[i][0]); j++) {
       cout << options[i][j] << '\n';
     }
+    cout << "Choose your answer :";
+    cin >> guess;
+    guess = toupper(guess);
+    if (guess == answerKey[i]) {
+
+      cout << '\n';
+      cout << "Your answer is correct." << '\n';
+      cout << '\n';
+      score++;
+    } else {
+      cout << "Wong choice:::" << '\n';
+      cout << '\n';
+    }
+    cout << "Your total Score is :" << score << '\n';
   };
   return 0;
 }
