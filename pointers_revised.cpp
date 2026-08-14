@@ -58,7 +58,8 @@ int main() {
   cout << p << '\n';   // address stored in p , which is the address of a;
   cout << *q << '\n';  // the value stored in the q which is the address of p
   cout << &p << '\n'; // the address of p as its own in the memory as the adress
-                      // of q as its own
+                      // of q as its ow
 
+  cout << "The value of the pointer at this index is = " << '\n';
   return 0;
 }

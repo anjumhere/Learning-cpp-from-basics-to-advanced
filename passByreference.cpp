@@ -1,27 +1,19 @@
 #include <iostream>
 
+using std::cin;
 using std::cout;
-using std::string;
 
-// in this program we will swap the values by passing their reference to a
-// function;
-void swap(string &x, string &y);
+void change(int *ptr);
 int main() {
 
-  string x = "one";
-  string y = "two";
+  int a = 10;
 
-  swap(x, y);
-  cout << "The value of x : " << x << '\n';
-  cout << "The value of y : " << y << '\n';
-
+  change(&a);
+  cout << "The changed value of a is = " << a << '\n';
   return 0;
 }
 
-void swap(string &x, string &y) {
-
-  string temp;
-  temp = x;
-  x = y;
-  y = temp;
+void change(int *ptr) {
+  cout << "Enter the new value of a (which is pased byr reference :";
+  cin >> *ptr;
 }
