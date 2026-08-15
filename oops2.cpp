@@ -17,15 +17,23 @@ using std::string;
  */
 
 class Teacher {
-public: // private class restrict us from using the data outside the class and
-        // protected class will be used in inheritance.
+  // private class restrict us from using the data outside the class and
+  // protected class will be used in inheritance.
+private:
+  double salary;
+
+public:
   // Now that class is public , we can access it outside this class too.
   string name;
   string dept;
   string subject;
-  double salary;
 
   void changeDept(string newDept) { dept = newDept; }
+  // setter => used to set the values to private data member member function;
+  void setSalary(double s) { salary = s; }
+  // getter => used to get the value of a private data member or member
+  // function;
+  double getSalary() { return salary; }
 };
 
 int main() {
@@ -35,13 +43,13 @@ int main() {
   t1.name = "Anjum";
   t1.dept = "Computer Science";
   t1.subject = "C++";
-  t1.salary = 50250.25;
   t1.changeDept("Psycology");
+  t1.setSalary(50000.50);
 
   cout << t1.name << '\n';
   cout << t1.dept << '\n';
   cout << t1.subject << '\n';
-  cout << t1.salary << '\n';
+  cout << t1.getSalary() << '\n';
 
   return 0;
 }
