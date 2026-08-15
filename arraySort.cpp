@@ -1,18 +1,27 @@
-// #include <algorithm>
 #include <iostream>
+// #include <algorithm>
+
 using std::cout;
 // using std::sort;
 
+/*
+ * ----------------------------------------------------------------
+ * Bubble Sort implementation
+ * ----------------------------------------------------------------
+ */
 void sort(int arr[], int size);
-int main() {
 
+int main() {
   int arr[] = {6, 5, 4, 3, 7, 2, 8, 11, 14, 13, 12, 15, 16, 1, 9, 0};
   int size = sizeof(arr) / sizeof(arr[0]);
-  // sort(arr, arr + size);
+
   sort(arr, size);
+  // sort(arr, arr + size); // std::sort alternative, using <algorithm>
+
   for (int elem : arr) {
     cout << elem << '\n';
   }
+
   return 0;
 }
 

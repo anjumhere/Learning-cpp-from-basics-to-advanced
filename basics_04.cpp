@@ -4,13 +4,13 @@ using std::cout;
 using std::string;
 
 int lifeUp();
-int main() {
 
+int main() {
   int life = 0;
+
   do {
     life += lifeUp();
     cout << "life is :" << life << '\n';
-
   } while (life != 5);
 }
 

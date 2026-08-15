@@ -1,15 +1,29 @@
 /*
- * =====================================================================================
- * Encapsulation => Encapsulation is the wrqapping up of data members and data
- * functions under a single unit called class.
- * =====================================================================================
+ * ================================================================
+ *                        ENCAPSULATION
+ * ================================================================
+ * Encapsulation is the wrapping up of data members and member
+ * functions under a single unit called a class.
+ * ================================================================
  */
 
 #include <iostream>
 #include <string>
+
 using std::cout;
 using std::string;
 
+/*
+ * ----------------------------------------------------------------
+ * Class: Student
+ * ----------------------------------------------------------------
+ * Here we group data (properties/attributes) and a member function
+ * under a single unit called a class — this is encapsulation.
+ *
+ * Encapsulation is also used to hide sensitive data, like
+ * student_code below. We hide sensitive data by making it private.
+ * ----------------------------------------------------------------
+ */
 class Student {
 private:
   double student_code;
@@ -22,11 +36,6 @@ public:
 
   void changeSection(string newSection);
 };
-
-// Here we have grouped data (properties and attributes) + member function under
-// a single unit called class. This is known as encapsulation. Encapsulation is
-// also used to hide sensitive data like student code in the above example; We
-// can hide sensitive data by making the data private;
 
 int main() {
 

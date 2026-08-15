@@ -4,19 +4,23 @@
 using std::cin;
 using std::cout;
 
+/*
+ * ----------------------------------------------------------------
+ * Random Event Generator (Random Prize Generator)
+ * ----------------------------------------------------------------
+ */
+
 int main() {
-
-  // random number generator
   /*
-  srand(time(NULL));
-  int num = rand() % 6 + 1;
-  cout << num << '\n';
-*/
-
-  // random event generator(random prize generator)
+   * Basic random number generator (reference example)
+   */
+  // srand(time(NULL));
+  // int num = rand() % 6 + 1;
+  // cout << num << '\n';
 
   srand(time(0));
   int randomNum = rand() % 5 + 1;
+
   switch (randomNum) {
   case 1:
     cout << "You have won a prize of $100!\n";

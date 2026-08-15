@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iostream>
 
 using std::cin;
@@ -7,11 +8,22 @@ using std::string;
 double showBalance(double balance);
 double deposite();
 double withdraw(double balance);
-void exit();
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::string;
+
+double showBalance(double balance);
+double deposite();
+double withdraw(double balance);
+void exitProgram();
+
 int main() {
   int choose;
   double balance = 10;
   const double totalBalance = balance;
+
   do {
     cout << "Choose Options: \n";
     cout << "1. Show Balance\n";
@@ -20,43 +32,46 @@ int main() {
     cout << "4. Exit \n";
     cout << "Option :";
     cin >> choose;
+
     if (choose != 1 && choose != 2 && choose != 3 && choose != 4) {
       cout << "Choose between (1-4)\n";
       break;
     }
+
     switch (choose) {
     case 1:
       showBalance(balance);
       break;
+
     case 2:
       balance += deposite();
       if (balance == 0) {
         showBalance(totalBalance);
       } else {
-
         showBalance(balance);
       }
       break;
-    case 3:
 
+    case 3:
       balance -= withdraw(balance);
       showBalance(balance);
       break;
+
     case 4:
-      exit();
+      exitProgram();
       break;
+
     default:
       cout << "Invalid option\n";
     }
 
   } while (choose != 4);
+
   return 0;
 }
 
 double showBalance(double balance) {
-
   cout << "The balance of the user is : " << balance << '\n' << '\n';
-
   return balance;
 }
 
@@ -71,13 +86,13 @@ double withdraw(double balance) {
   double withdrawAmount;
   cout << "Enter the amount to withdraw :";
   cin >> withdrawAmount;
+
   if (withdrawAmount > balance) {
     cout << "Not enough Balance\n";
     return 0;
   } else {
     if (withdrawAmount > 0) {
       cout << "********** Result *********\n\n";
-
       return withdrawAmount;
     } else {
       cout << "Invalid withdraw amount\n";
@@ -86,4 +101,4 @@ double withdraw(double balance) {
   }
 }
 
-void exit() { cout << "Thanks for visiting\n"; }
+void exitProgram() { cout << "Thanks for visiting\n"; }
