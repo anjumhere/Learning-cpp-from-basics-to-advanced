@@ -2,22 +2,25 @@
 
 using std::cout;
 using std::string;
-struct student {
 
+struct student {
   string name;
   double gpa;
   bool enrolled;
 };
+
 int main() {
 
   student student1;
   student1.name = "Jayce Holland";
   student1.gpa = 3.5;
   student1.enrolled = true;
+
   student student2;
   student2.name = "Tom Holland";
   student2.gpa = 2.5;
   student2.enrolled = false;
+
   student student3;
   student3.name = " Tom Cruise";
   student3.gpa = 4.0;

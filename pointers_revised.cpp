@@ -5,30 +5,38 @@ using std::cout;
 int main() {
 
   /*
-  int a = 10;
-  int *ptr = &a;
-  cout << "The value of a is = " << a << '\n';
-  cout << "The address  of a is = " << &a << '\n';
-  cout << "The address of a in poiter is = " << ptr << '\n';
-  cout << "The value after defreferencing ptr is = " << *ptr << '\n';
-*/
+   * ----------------------------------------------------------------
+   * Basic pointer recap
+   * ----------------------------------------------------------------
+   * int a = 10;
+   * int *ptr = &a;
+   * cout << "The value of a is = " << a << '\n';
+   * cout << "The address  of a is = " << &a << '\n';
+   * cout << "The address of a in pointer is = " << ptr << '\n';
+   * cout << "The value after dereferencing ptr is = " << *ptr << '\n';
+   * ----------------------------------------------------------------
+   */
 
-  // Pointer to pointer
-
+  /*
+   * ----------------------------------------------------------------
+   * Pointer to pointer
+   * ----------------------------------------------------------------
+   */
   int marks = 100;
 
   cout << "Dereferenced marks are =======>" << *(&marks) << '\n';
-  // first pointer
 
-  int *point = &marks; // point has the adress  of value variable;
+  // first pointer — holds the address of marks
+  int *point = &marks;
 
-  // second pointer (i-e pointer to pointer)
-
+  // second pointer (i.e. pointer to pointer)
   int **point2 = &point;
 
-  // **point2 = 200; // *point hold that address of pointer1 which holds the
-  // adress of marks , in this way we can access and  modify the value of marks
-  // indirectly;
+  /*
+   * **point2 = 200; // *point holds the address of marks, and
+   * point2 holds the address of point — this is how we can access
+   * and modify the value of marks indirectly.
+   */
 
   cout << "The value of marks is = " << marks << '\n';
   cout << "The address of marks in pointer1 is = " << point << '\n';
@@ -40,8 +48,12 @@ int main() {
   cout << '\n';
   cout << '\n';
   cout << '\n';
-  // predict the output
 
+  /*
+   * ----------------------------------------------------------------
+   * Predict the output
+   * ----------------------------------------------------------------
+   */
   int a = 5;
   int *p = &a;
   int **q = &p;
@@ -49,17 +61,24 @@ int main() {
   cout << '\n';
   cout << '\n';
   cout << '\n';
-  cout << "The address of a = " << &a << '\n'; // address of a ------------
-  cout << *p << '\n';  // value stored in the address stored in p which is
-                       // address of a  and value of a = 5  -------------
-  cout << **q << '\n'; // the value stored in the stored in the adress of q
-                       // which is the address of p , which stores the address
-                       // of a , value = 5 -----
-  cout << p << '\n';   // address stored in p , which is the address of a;
-  cout << *q << '\n';  // the value stored in the q which is the address of p
-  cout << &p << '\n'; // the address of p as its own in the memory as the adress
-                      // of q as its ow
+
+  cout << "The address of a = " << &a << '\n'; // address of a
+
+  cout << *p << '\n'; // value stored at the address stored in p,
+                      // which is the address of a — value = 5
+
+  cout << **q << '\n'; // value stored at the address stored in q,
+                       // which is the address of p, which stores
+                       // the address of a — value = 5
+
+  cout << p << '\n'; // address stored in p, which is the address of a
+
+  cout << *q << '\n'; // value stored in q, which is the address of p
+
+  cout << &p << '\n'; // the address of p itself in memory, the
+                      // same way q holds an address of its own
 
   cout << "The value of the pointer at this index is = " << '\n';
+
   return 0;
 }

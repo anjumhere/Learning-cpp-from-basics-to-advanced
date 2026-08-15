@@ -2,40 +2,52 @@
 
 using std::cout;
 
-// pointers => Variable that stores the memory address of another variable
-// we use address-off operator to point to the object that we want to store the
-// address of (&d) we use  deference operator to access the value of the
-// pointer/ variable it is pointing to;
+/*
+ * ----------------------------------------------------------------
+ * Pointers
+ * ----------------------------------------------------------------
+ * A pointer is a variable that stores the memory address of
+ * another variable.
+ *
+ * We use the address-of operator (&) to point to the object whose
+ * address we want to store. We use the dereference operator (*) to
+ * access the value the pointer is pointing to.
+ * ----------------------------------------------------------------
+ */
 void get(int *myp);
+
 int main() {
 
   int value = 55;
-  int *myp = &value; // we use ( * The dereferencce operator and  We also use
-                     // the & address-off operator
+  int *myp = &value; // & = address-of operator, * = dereference operator
 
-  cout << "The memory address of value is : " << myp
-       << '\n'; // The address of the value variable
-  cout << "The value of the variable is : " << *myp
-       << '\n'; // The value of the value variable;
+  cout << "The memory address of value is : " << myp << '\n';
+  cout << "The value of the variable is : " << *myp << '\n';
 
-  // pasing pointer to a function
-
+  /*
+   * ----------------------------------------------------------------
+   * Passing a pointer to a function
+   * ----------------------------------------------------------------
+   */
   get(myp);
 
-  // making a pointer array or storing an array in a pointer variable
-
+  /*
+   * ----------------------------------------------------------------
+   * Making a pointer array — storing an array in a pointer variable
+   * ----------------------------------------------------------------
+   */
   int arr[] = {
       1, 2, 3, 34, 5, 6, 3, 2, 1,
   };
   int *myarr = arr;
-  cout << "The address of the arary is :" << myarr << '\n';
-  cout << "The value of the firs item in the array is :" << *myarr << '\n';
+
+  cout << "The address of the array is :" << myarr << '\n';
+  cout << "The value of the first item in the array is :" << *myarr << '\n';
 
   return 0;
 }
 
 void get(int *myp) {
-
   cout << "The memory address of value is : " << myp << '\n';
-  cout << "The memory value  of value is : " << *myp << '\n';
+  cout << "The memory value of value is : " << *myp << '\n';
 }

@@ -1,14 +1,19 @@
 #include <iostream>
+
 using std::cin;
 using std::cout;
+
 int main() {
+
   char unit;
   double temperature;
+
   cout << "************Temperature Convertor ****************\n";
   cout << "F = Fahrenheit" << '\n';
   cout << "C = Celsius" << '\n';
   cout << "Choose the unit (C/F) :";
   cin >> unit;
+
   if (unit == 'C' || unit == 'c') {
     cout << "Enter the temperature in Fahrenheit :";
     cin >> temperature;
@@ -22,5 +27,6 @@ int main() {
   } else {
     cout << "Invalid unit choice\n";
   }
+
   return 0;
 }
