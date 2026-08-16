@@ -119,5 +119,14 @@ int main() {
   Student s1("Anjum", "15-D", 2267391006);
   s1.getResult();
 
+  /*
+   * Copy Constructor
+   * Special constructor(if not made , created by default) used to copy
+   * properties of one object into another.
+   *
+   */
+  Student s2(s1);
+  cout << "The result Shown with copy constructor\n";
+  s2.getResult();
   return 0;
 }
