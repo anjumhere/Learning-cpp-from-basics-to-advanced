@@ -5,13 +5,16 @@ A collection of practice programs, interactive games, utility scripts, and found
 ## 📚 Resources I Used
 
 ### YouTube Channels
+
 - [Bro Code](https://www.youtube.com/@BroCodez)
 - [Hitesh Choudhary](https://www.youtube.com/@HiteshCodeLab)
 - [Apna College](https://www.youtube.com/@ApnaCollegeOfficial)
 
 ### Books
-- *C++ Primer* (5th Edition) — Stanley B. Lippman, Josée Lajoie, Barbara E. Moo
-- *Programming: Principles and Practice Using C++* (3rd Edition) — Bjarne Stroustrup
+
+- _C++ Primer_ (5th Edition) — Stanley B. Lippman, Josée Lajoie, Barbara E. Moo
+- _Programming: Principles and Practice Using C++_ (3rd Edition) — Bjarne Stroustrup
+
 ## Repository Index
 
 ### 🎮 Interactive Games
@@ -60,12 +63,23 @@ A collection of practice programs, interactive games, utility scripts, and found
 
 ### 🏛️ Object-Oriented Programming
 
-| Program File                      | Description                                                                                                                                                                                    | Core C++ Concepts Covered                                                                            |
-| :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
-| **`oop_classes_and_objects.cpp`** | Introduces the fundamentals of OOP — grouping data and the functions that act on it into a single class, and instantiating that class as an object.                                            | Classes, objects, member variables, member functions                                                 |
-| **`oop_access_modifiers.cpp`**    | Extends the `Teacher` class with `private` and `public` access modifiers, plus getter/setter methods for controlling access to private data.                                                   | Access modifiers (`private`, `public`, `protected`), getters and setters, dot-operator member access |
-| **`oop_encapsulation.cpp`**       | Demonstrates encapsulation — bundling a class's properties and behavior together, and hiding sensitive data (like a student code) behind private access.                                       | Encapsulation, private data members, class design                                                    |
-| **`oop_constructors.cpp`**        | Covers constructors in depth: non-parameterized and parameterized constructors, constructor overloading, and the `this` pointer for resolving naming conflicts between parameters and members. | Constructors, constructor overloading, the `this` pointer, member initialization                     |
+| Program File                      | Description                                                                                                                                                                                                                                           | Core C++ Concepts Covered                                                                                                                                                     |
+| :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`oop_classes_and_objects.cpp`** | Introduces the fundamentals of OOP — grouping data and the functions that act on it into a single class, and instantiating that class as an object.                                                                                                   | Classes, objects, member variables, member functions                                                                                                                          |
+| **`oop_access_modifiers.cpp`**    | Extends the `Teacher` class with `private` and `public` access modifiers, plus getter/setter methods for controlling access to private data.                                                                                                          | Access modifiers (`private`, `public`, `protected`), getters and setters, dot-operator member access                                                                          |
+| **`oop_encapsulation.cpp`**       | Demonstrates encapsulation — bundling a class's properties and behavior together, and hiding sensitive data (like a student code) behind private access.                                                                                              | Encapsulation, private data members, class design                                                                                                                             |
+| **`oop_constructors.cpp`**        | Covers constructors in depth: non-parameterized and parameterized constructors, constructor overloading, and the `this` pointer for resolving naming conflicts between parameters and members.                                                        | Constructors, constructor overloading, the `this` pointer, member initialization                                                                                              |
+| **`oop_inheritance.cpp`**         | Covers inheritance — passing properties and member functions from a base (parent) class to a derived (child) class. Demonstrates a `Student` class deriving from a `Person` class, and traces constructor/destructor call order across the hierarchy. | Inheritance (`class Derived : public Base`), base-class initialization via the member initializer list, constructor order (base → derived), destructor order (derived → base) |
+
+#### Inheritance Access Modifiers
+
+How a base class's member access levels map into a derived class, depending on the inheritance mode used:
+
+| Base Class \ Derived Class | Private Mode  | Protected Mode | Public Mode   |
+| :------------------------- | :------------ | :------------- | :------------ |
+| **Private**                | Not Inherited | Not Inherited  | Not Inherited |
+| **Protected**              | Private       | Protected      | Protected     |
+| **Public**                 | Private       | Protected      | Public        |
 
 ### 🔗 Pointers, References & Memory Management
 
@@ -189,6 +203,7 @@ This repository is organized as a structured, step-by-step progression through s
    - `oop_access_modifiers.cpp`: Control access to class data with `private`/`public`, and use getters/setters.
    - `oop_encapsulation.cpp`: Bundle data and behavior together while hiding sensitive internals.
    - `oop_constructors.cpp`: Initialize objects automatically with constructors, including overloading and the `this` pointer.
+   - `oop_inheritance.cpp`: Derive a `Student` class from a `Person` base class, passing on properties and member functions, and observe base→derived constructor order and derived→base destructor order.
 
 9. **Comprehensive Applications & Game Loops**
    _Build interactive, robust programs combining state machines, validation, and full game loops._
