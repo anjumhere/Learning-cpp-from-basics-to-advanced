@@ -58,6 +58,18 @@ public:
     // memory) So: take the ACTUAL NUMBER from the original's heap memory, and
     // copy that number into our new heap memory
   }
+
+  /*  ------------------- Destructor--------------------
+   * Unlike Constructor which is used to allocate memory , destructor is used to
+   * de-allocate memory.
+   */
+  ~Student() {
+
+    // We use ~ sign to creaate a destructor ,to delete dynamically allocated
+    // memories we have to the word delete;
+    cout << "I am a destructor\n";
+    delete cgpaptr;
+  }
   void getDetails() {
 
     cout << "Name :" << name << '\n';
