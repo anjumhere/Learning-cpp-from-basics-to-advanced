@@ -4,6 +4,8 @@ A collection of practice programs, interactive games, utility scripts, and found
 
 
 # Resources I Used
+| :----------------------------- | :------------------------------------------------------------------------------------------------------
+
 ### 1. Bro Code (Youtube)
 ### 2. Hitesh Chaudary (Youtube)
 ### 3. Apna College (Youtube)
