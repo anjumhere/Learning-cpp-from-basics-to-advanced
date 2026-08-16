@@ -16,30 +16,44 @@ public:
   string name;
   int age;
 
-  Person() { cout << "Parent constructior\n"; }
+  Person(string name, int age) {
+
+    this->name = name;
+    this->age = age;
+
+    cout << "Parent constructior\n";
+  }
+  ~Person() { cout << "This is parent destructor\n"; }
 };
 
 class Student : public Person {
 
 public:
   int roll_number;
-  Student() { cout << "This is child constructor\n"; }
-
+  Student(string name, int age, int roll_number) : Person(name, age) {
+    this->roll_number = roll_number;
+  };
   void getValues() {
     cout << "Name :" << name << '\n';
     cout << "age  :" << age << '\n';
     cout << "Roll Number :" << roll_number << '\n';
   }
+
+  ~Student() { cout << "This is a child destructor\n"; }
 };
 
 int main() {
 
-  Student s1;
-  s1.name = "Anjum";
-  s1.age = 21;
-  s1.roll_number = 105325;
-
+  Student s1("Anjum", 21, 104325);
   s1.getValues();
 
+  /*
+   * Construction order: parent -> child
+   * Destruction order: child -> parent (reverse of construction)
+   *
+   * When you check the output, you will see that the parent constructor
+   * runs first, followed by the child constructor. On the other hand,
+   * the child destructor runs first, followed by the parent destructor.
+   */
   return 0;
 }
