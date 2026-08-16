@@ -5,6 +5,10 @@
  * to child class.
  */
 
+ /*
+    This is single level inheritance , where we have a single parent class and derived class.
+    To learn more about Multi-Level-Inheritance , Check out oop_inheritance_02.cpp
+ */
 #include <iostream>
 #include <string>
 
@@ -21,6 +25,7 @@ public:
     this->name = name;
     this->age = age;
 
+    cout << "hello World" << '\n';
     cout << "Parent constructior\n";
   }
   ~Person() { cout << "This is parent destructor\n"; }

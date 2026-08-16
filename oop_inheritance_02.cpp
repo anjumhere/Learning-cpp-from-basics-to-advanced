@@ -10,6 +10,10 @@ Multi-level Inheritance
   Child Class
 
 */
+
+/*
+If you want to have two parent classes and one derived class then see oop_inheritance_03.cpp
+*/
 #include<iostream>
 #include<string>
 
