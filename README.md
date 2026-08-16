@@ -2,6 +2,9 @@
 
 A collection of practice programs, interactive games, utility scripts, and foundational exercises built while learning C++. This repository covers core language concepts — control flow, looping, string manipulation, math utilities, procedural functions, array operations, pointers, dynamic memory, object-oriented programming, recursion, sorting, searching, and reference management.
 
+
+# Resources I Used
+
 ## Repository Index
 
 ### 🎮 Interactive Games
