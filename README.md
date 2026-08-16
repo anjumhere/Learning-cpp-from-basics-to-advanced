@@ -2,16 +2,16 @@
 
 A collection of practice programs, interactive games, utility scripts, and foundational exercises built while learning C++. This repository covers core language concepts — control flow, looping, string manipulation, math utilities, procedural functions, array operations, pointers, dynamic memory, object-oriented programming, recursion, sorting, searching, and reference management.
 
+## 📚 Resources I Used
 
-# Resources I Used
-| :----------------------------- | :------------------------------------------------------------------------------------------------------
+### YouTube Channels
+- [Bro Code](https://www.youtube.com/@BroCodez)
+- [Hitesh Choudhary](https://www.youtube.com/@HiteshCodeLab)
+- [Apna College](https://www.youtube.com/@ApnaCollegeOfficial)
 
-### 1. Bro Code (Youtube)
-### 2. Hitesh Chaudary (Youtube)
-### 3. Apna College (Youtube)
-### 4. C++ Primer (5th Edition)
-### 5. Programming Principles And Practices (3rd Edition)
-
+### Books
+- *C++ Primer* (5th Edition) — Stanley B. Lippman, Josée Lajoie, Barbara E. Moo
+- *Programming: Principles and Practice Using C++* (3rd Edition) — Bjarne Stroustrup
 ## Repository Index
 
 ### 🎮 Interactive Games
