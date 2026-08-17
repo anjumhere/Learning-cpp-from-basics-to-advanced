@@ -13,7 +13,7 @@
  * There are two types of polymorphism:
  * 1. Compile time polymorphism (constructor overloading and function
  *    overloading are examples of compile time polymorphism)
- * 2. Run time polymorphism
+ * 2. Run time polymorphism => See in oop_polymorphism_02.cpp
  */
 
 #include <iostream>
