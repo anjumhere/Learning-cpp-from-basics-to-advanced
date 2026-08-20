@@ -1,6 +1,6 @@
 # C++ Practice Repository
 
-A collection of practice programs, interactive games, utility scripts, and foundational exercises built while learning C++. This repository covers core language concepts — control flow, looping, string manipulation, math utilities, procedural functions, array operations, pointers, dynamic memory, object-oriented programming, recursion, sorting, searching, and reference management.
+A collection of practice programs, interactive games, utility scripts, and foundational exercises built while learning C++. This repository covers core language concepts — control flow, looping, string manipulation, math utilities, procedural functions, array operations, pointers, dynamic memory, object-oriented programming, recursion, sorting, searching, reference management, and the Standard Template Library.
 
 ## 📚 Resources I Used
 
@@ -101,6 +101,13 @@ How a base class's member access levels map into a derived class, depending on t
 | **`dynamic_memory.cpp`**                 | Covers dynamic memory allocation with `new` and `delete`, including allocating a single int and dynamically sizing a character array at runtime based on user input.                | `new`/`delete`, heap allocation, dynamically-sized arrays                                     |
 | **`memory_management.cpp`**              | A conceptual placeholder file dedicated to memory management, dynamic allocation, preventing memory leaks, and cleaning up heap-allocated objects.                                  | Dynamic memory allocation, pointer management, memory leak prevention                         |
 | **`string_swap.cpp`**                    | Swaps two string variables in-place within `main` using a temporary storage variable.                                                                                               | Swapping algorithms, temporary variables, basic memory storage flow                           |
+
+### 📦 STL (Standard Template Library)
+
+| Program File       | Description                                                                                                                                                                                                 | Core C++ Concepts Covered                                                                                                  |
+| :----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| **`stl.cpp`**      | Introduces the Standard Template Library with a focus on `vector` — dynamic array creation, `push_back`/`pop_back`, random access by index, bounds-checked access via `.at()`, `insert` at arbitrary positions, and querying `size`/`capacity`.                              | `std::vector`, `push_back`, `pop_back`, `insert`, `at()`, `size()`, `capacity()`, range-based `for` loop, iterators       |
+| **`stl_list.cpp`** | Demonstrates the STL `list` container — a doubly-linked list supporting efficient insertion/removal at both ends. Uses `push_front`, `push_back`, manual iterator positioning with `advance`, and `insert` at iterator positions.                                               | `std::list`, `push_front`, `push_back`, `pop_front`, `pop_back`, iterators, `advance`, O(1) insertions at known positions  |
 
 ### 🧱 Data Structures
 
@@ -215,7 +222,12 @@ This repository is organized as a structured, step-by-step progression through s
    - `oop_polymorphism.cpp`: Explore compile-time polymorphism through overloading.
    - `oop_polymorphism_02.cpp`: Explore run-time polymorphism through function overriding.
 
-9. **Comprehensive Applications & Game Loops**
+9. **STL (Standard Template Library)**
+   _Use pre-built, efficient containers and algorithms instead of writing data structures from scratch._
+   - `stl.cpp`: Work with `std::vector` — dynamic arrays with automatic resizing, random access, and bounds-checked element access.
+   - `stl_list.cpp`: Explore `std::list` — a doubly-linked list with O(1) insertions at both ends and iterator-based positioning.
+
+10. **Comprehensive Applications & Game Loops**
    _Build interactive, robust programs combining state machines, validation, and full game loops._
    - `banking_system.cpp`: Construct multi-layered state menus checking balances, deposits, and overdraft rules.
    - `number_guessing_game.cpp`: Build a high/low matching loop tracking user attempts dynamically.
