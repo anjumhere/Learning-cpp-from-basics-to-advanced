@@ -103,14 +103,34 @@ int main() {
     for (int val : vec) {
         cout << val << " ";
     }
-    cout << '\n';
+    cout << '\n' << '\n';
     cout << "Size : " << vec.size() << '\n';
 
     /*
      * capacity() function shows the current capacity of the vector.
      *
      */
-    cout << "Capacity : " << vec.capacity() << '\n';
+    cout << "Capacity : " << vec.capacity() << '\n' << '\n';
+
+    /*----------------------------------------------------------------------------------------
+     at() or[]
+        these function are used to access an index of a vector , same as we do in normal array
+     -----------------------------------------------------------------------------------------*/
+    cout << "at(0) Function\n";
+    cout << "The value at index 3 is :" << vec.at(3) << '\n' << '\n';
+
+    cout << "or[] Function\n";
+    cout << "The value at index 5 is :" << vec[5] << '\n' << '\n';
+    /*---------------------------------------------------------------------------------------------
+     * front and back
+     * front and back are used to access the first an last element of a vector
+     ----------------------------------------------------------------------------------------------*/
+
+    cout << "front() Function\n";
+    cout << "The first element is :" << vec.front() << '\n';
+
+    cout << "back() Function";
+    cout << "The last element is :" << vec.back() << '\n';
 
     return 0;
 }
