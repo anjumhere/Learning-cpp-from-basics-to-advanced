@@ -13,37 +13,24 @@ sort(), find(), reverse()).
 algorithms (e.g., comparison logic in sort()).
  *
  */
-#include <iostream>
 
+#include <iostream>
 #include <vector>
 
 using std::cout;
-using std::endl;
-
 using std::vector;
 
+/*
+ *  --------  Vector   -------
+ *  In cpp once an array is declared , its size can not be changed , its fixed, e.g
+ *  int arr[4] = {1,2,3,4}
+ *  Now we can't make its size 5 or 3, so we need something where its size can be dynamic.
+ *  That's why we are going to use vector here , its dynamic , its value can be changed.
+ */
+
 int main() {
-    /*
-1. Vector
-Dynamic array. Stored contiguously in memory, so it supports fast random access. Resizes automatically when it runs out
-of space (usually doubles its capacity).
-    */
+
     vector<int> vec;
 
-    vec.push_back(10); // add to end - O(1) amortized
-    vec.push_back(20);
-    vec.push_back(30);
-
-    vec[1] = 25;       // random access by index - O(1)
-    cout << vec.at(0); // safer access, throws if out of range
-
-    vec.pop_back();             // remove last element - O(1)
-    vec.insert(vec.begin(), 5); // insert at front - O(n), shifts everything
-
-    cout << "Size: " << vec.size() << endl;
-    cout << "Capacity: " << vec.capacity() << endl; // allocated space, >= size
-
-    for (int x : vec)
-        cout << x << " ";
     return 0;
 }
