@@ -75,6 +75,10 @@ A collection of practice programs, interactive games, utility scripts, and found
 | **`oop_inheritance_03.cpp`**      | Multiple inheritance: a `ChildClass` inherits from two parent classes (`ParentOne` and `ParentTwo`), combining their properties.                                                               | Multiple inheritance, dual parent initialization, `showInfo()`                                                                                                                |
 | **`oop_polymorphism.cpp`**        | Compile-time polymorphism via constructor overloading and function overloading — multiple functions/constructors with the same name but different parameter lists.                             | Compile-time polymorphism, constructor overloading, function overloading                                                                                                      |
 | **`oop_polymorphism_02.cpp`**     | Run-time polymorphism via function overriding — the child class redefines a parent class method, replacing it when called on a child object.                                                   | Function overriding, run-time polymorphism, `public` inheritance                                                                                                              |
+| **`oop-virtualFunctions.cpp`**    | Introduces virtual functions — a `virtual` member function in the base class is expected to be redefined in the derived class, so the child version gets called through run-time dispatch.      | Virtual functions (`virtual`), redefining base behavior in derived classes, run-time polymorphism                                                                             |
+| **`oop-abstractions.cpp`**        | Demonstrates abstraction via abstract classes — a pure virtual `draw()` makes `Shape` non-instantiable, forcing `Circle` and `Square` to provide their own implementations.                     | Abstraction, abstract classes, pure virtual functions (`= 0`), defining an interface for derived classes                                                                       |
+| **`static_keyword.cpp`**          | Explores the `static` keyword — static local variables persisting across function calls, and static objects living until the end of `main`, visualized through constructor/destructor order.   | Static local variables, object lifetime, constructor/destructor call order, shared state across calls                                                                         |
+| **`test.cpp`**                    | Small scratch exercise combining inheritance (`Student : Person`) with parameterized constructors, base-class initialization via `this`, and destructor call order.                            | Inheritance recap, parameterized constructors, base-class initialization, destructors                                                                                         |
 
 #### Inheritance Access Modifiers
 
@@ -106,7 +110,7 @@ How a base class's member access levels map into a derived class, depending on t
 
 | Program File       | Description                                                                                                                                                                                                                                     | Core C++ Concepts Covered                                                                                                 |
 | :----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ |
-| **`stl.cpp`**      | Introduces the Standard Template Library with a focus on `vector` — dynamic array creation, `push_back`/`pop_back`, random access by index, bounds-checked access via `.at()`, `insert` at arbitrary positions, and querying `size`/`capacity`. | `std::vector`, `push_back`, `pop_back`, `insert`, `at()`, `size()`, `capacity()`, range-based `for` loop, iterators       |
+| **`stl.cpp`**      | Introduces the Standard Template Library with a focus on `vector` — why vectors replace fixed-size arrays, dynamic growth via `push_back`, element removal via `pop_back`, and how `size()` differs from `capacity()` as the underlying heap array doubles. | `std::vector`, `push_back`, `pop_back`, `size()`, `capacity()`, capacity doubling, range-based `for` loop |
 | **`stl_list.cpp`** | Demonstrates the STL `list` container — a doubly-linked list supporting efficient insertion/removal at both ends. Uses `push_front`, `push_back`, manual iterator positioning with `advance`, and `insert` at iterator positions.               | `std::list`, `push_front`, `push_back`, `pop_front`, `pop_back`, iterators, `advance`, O(1) insertions at known positions |
 
 ### 🧱 Data Structures
@@ -223,5 +227,12 @@ This repository is organized as a structured, step-by-step progression through s
    - `oop_polymorphism_02.cpp`: Explore run-time polymorphism through function overriding.
 
 9. **STL (Standard Template Library)**
+   _Replace fixed-size arrays with dynamic containers that grow and shrink on their own._
+   - `stl.cpp`: Use `vector` as a dynamic array — `push_back`/`pop_back`, and how `capacity()` doubles while `size()` counts only real elements.
+   - `stl_list.cpp`: Explore `list` as a doubly-linked list with O(1) insertion at the front/back and iterator-based inserts via `advance`.
 
-- Add vector
+10. **Advanced OOP: Virtual Functions, Abstraction & Static**
+    _Deepen polymorphism with virtual dispatch, abstract interfaces, and object lifetime control._
+    - `oop-virtualFunctions.cpp`: Redefine base-class behavior in derived classes using `virtual` functions.
+    - `oop-abstractions.cpp`: Model interfaces with abstract classes and pure virtual (`= 0`) functions.
+    - `static_keyword.cpp`: Preserve values across function calls and observe static vs. automatic object lifetime through constructor/destructor order.
