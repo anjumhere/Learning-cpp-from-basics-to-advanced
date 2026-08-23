@@ -1,3 +1,14 @@
+/*
+ * CONCEPT: Applied mini-project — Quiz Game
+ * Parallel arrays hold the quiz data: questions[i], options[i] (a 2D
+ * array of four choices each) and answerKey[i]. The loop walks all
+ * three in lockstep, compares the player's letter against the key,
+ * and keeps a running score.
+ * Exercises: std::array and nested arrays, toupper() from <cctype>
+ * for case-insensitive answers, score accumulation, index-based data
+ * lookup.
+ */
+
 #include <array>
 #include <cctype>
 #include <iostream>
@@ -46,6 +57,28 @@ int main() {
 
         cout << "Your total Score is :" << score << '\n';
     };
+
+    // ----------------------------------------------------
+    // CHALLENGE A: Print a final report card after the loop
+    // >>> UNCOMMENT the block below, compile and run.
+    // >>> Observe: integer division — 3*100/4 is 75, no decimals.
+    // >>> For a real percentage you would cast to double first.
+    // ----------------------------------------------------
+    /*
+    cout << "\n========== FINAL RESULTS ==========\n";
+    cout << "Score: " << score << " / " << size << '\n';
+    cout << "Percentage: " << (score * 100) / size << "%\n";
+    if (score == size) {
+        cout << "Perfect score!\n";
+    }
+    */
+
+    // ----------------------------------------------------
+    // CHALLENGE B: Replay the missed questions
+    // >>> Record which indices the player got wrong (a second
+    // >>> std::array<int, 4> or a vector works), then loop over just
+    // >>> those indices at the end for a second attempt.
+    // ----------------------------------------------------
 
     return 0;
 }
