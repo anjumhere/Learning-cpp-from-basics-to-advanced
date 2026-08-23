@@ -1,0 +1,17 @@
+# Compiled binaries / build artifacts
+*.o
+*.out
+a.out
+oop-abstractions
+oop-virtualFunctions
+oop_access_modifiers
+oop_copy_constructors
+oop_polymorphism
+oop_polymorphism_02
+quiz_game
+static_keyword
+stl
+test
+
+# compiled binary accidentally committed with the stl file
+09_stl/02_more_about_vectors
