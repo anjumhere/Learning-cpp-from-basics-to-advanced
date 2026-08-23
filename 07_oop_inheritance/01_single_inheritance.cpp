@@ -1,13 +1,12 @@
 /*
- *                Inheritance
+ * CONCEPT: Single Inheritance
  * When properties and member functions of a base class are passed on to a
- * derived class. Passing on properites and member functions from parent class
- * to child class.
- */
-
- /*
-    This is single level inheritance , where we have a single parent class and derived class.
-    To learn more about Multi-Level-Inheritance , Check out oop_inheritance_02.cpp
+ * derived class: passing on properties and member functions from parent
+ * class to child class. Single level inheritance has a single parent class
+ * and a single derived class; use it whenever the child "is a" specialised
+ * version of the parent (a Student IS-A Person, plus a roll number).
+ * To learn more about multi-level inheritance, check out
+ * 02_multilevel_inheritance.cpp.
  */
 #include <iostream>
 #include <string>
@@ -49,6 +48,9 @@ public:
 
 int main() {
 
+  // ----------------------------------------------------
+  // STEP 1: Build a Student, watch constructors & destructors (active — compile & run as-is)
+  // ----------------------------------------------------
   Student s1("Anjum", 21, 104325);
   s1.getValues();
 
@@ -60,5 +62,33 @@ int main() {
    * runs first, followed by the child constructor. On the other hand,
    * the child destructor runs first, followed by the parent destructor.
    */
+
+  // ----------------------------------------------------
+  // STEP 2: A Parent standing on its own
+  // >>> UNCOMMENT the block below, then compile and run.
+  // >>> Observe: Person works perfectly alone and holds only the shared
+  // >>> basics (name, age) -- no roll_number exists here, and exactly ONE
+  // >>> destructor line ("parent") fires for this object.
+  // ----------------------------------------------------
+  /*
+  Person solo_parent("Solo Parent", 55);
+  cout << "Standalone Person -> name: " << solo_parent.name
+       << ", age: " << solo_parent.age << '\n';
+  */
+
+  // ----------------------------------------------------
+  // STEP 3: Everything public in Person is already inside Student
+  // >>> UNCOMMENT the block below, then compile and run.
+  // >>> Observe: s1.name and s1.age were never written inside Student --
+  // >>> they arrived through inheritance, and viewing the Student through a
+  // >>> Person reference proves the "is-a" relationship.
+  // ----------------------------------------------------
+  /*
+  cout << "Members inherited from Person -> name: " << s1.name
+       << ", age: " << s1.age << '\n';
+  Person &person_view = s1; // the same Student object, seen as a plain Person
+  cout << "Via a Person reference        -> name: " << person_view.name << '\n';
+  */
+
   return 0;
 }
