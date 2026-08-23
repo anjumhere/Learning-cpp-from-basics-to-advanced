@@ -1,20 +1,13 @@
 /*
- * ================================================================
- *                          CONSTRUCTORS
- * ================================================================
- * A special function invoked automatically at the time of object
- * creation, used for initialization.
- *
- *  1. Same name as the class
- *  2. Constructor has no return type
- *  3. Called only once, at the time of object creation
- *  4. Memory allocation happens when the constructor is called
- *
- * There are 3 types of constructors:
- *  1. Non-parameterized Constructor
- *  2. Parameterized Constructor
- *  3. Copy Constructor
- * ================================================================
+ * CONCEPT: Constructors & the `this` pointer
+ * A constructor is a special function invoked automatically when an
+ * object is created — its job is initialization.
+ * Rules: same name as the class, no return type, called once per
+ * object; memory is allocated as the constructor runs.
+ * Three kinds: non-parameterized, parameterized, and copy constructor.
+ * `this` is a pointer to the current object; `this->name` means
+ * "the name member OF THIS object" — essential when a parameter has
+ * the same name as a member.
  */
 
 #include <iostream>
@@ -104,29 +97,41 @@ public:
 };
 
 int main() {
-  /*
-   * Object with Non-parameterized Constructor.
-   * The constructor is called, the object is created, and
-   * memory is allocated.
-   */
+
+  // ----------------------------------------------------
+  // STEP 1: Create an object — watch the constructor fire
+  // >>> Compile and run as-is. "Hi, I am constructor" prints by
+  // >>> itself: you never called Teacher() — creating the object did.
+  // ----------------------------------------------------
   Teacher t1;
   cout << t1.dept << '\n';
   cout << '\n' << '\n';
 
+  // ----------------------------------------------------
+  // STEP 2: Pass data in via a parameterized constructor
+  // >>> UNCOMMENT the block below, then compile and run.
+  // >>> Observe: the arguments land in the members thanks to
+  // >>> this->name = name — left side is the member, right side
+  // >>> is the parameter.
+  // ----------------------------------------------------
   /*
-   * Object with Parameterized Constructor.
-   */
   Student s1("Anjum", "15-D", 2267391006);
   s1.getResult();
+  */
 
+  // ----------------------------------------------------
+  // STEP 3: Copy an existing object with the copy constructor
+  // >>> UNCOMMENT the block below too (STEP 2 must stay active —
+  // >>> it creates the s1 being copied), compile and run.
+  // >>> Observe: s2 prints s1's values without you passing them
+  // >>> manually — the compiler-generated copy constructor copied
+  // >>> every member. (Deep vs shallow copies: next file.)
+  // ----------------------------------------------------
   /*
-   * Copy Constructor
-   * Special constructor(if not made , created by default) used to copy
-   * properties of one object into another.
-   *
-   */
   Student s2(s1);
   cout << "The result Shown with copy constructor\n";
   s2.getResult();
+  */
+
   return 0;
 }

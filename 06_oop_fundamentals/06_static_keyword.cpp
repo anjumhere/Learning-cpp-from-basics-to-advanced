@@ -1,9 +1,14 @@
 /*
- * ------- Static Keyword -------
- *  Variables created as static in a function are created and initialized once for the lifetime of the function
- *  Static variables are created and initialized once. They are shared accross all the other classes and objects
- *  throughout the program
+ * CONCEPT: static
+ * A `static` local variable is created and initialized ONCE and keeps
+ * its value for the whole program lifetime — even though it is only
+ * visible inside its function/scope. A `static` object is likewise
+ * constructed once and destroyed only when main() ends.
+ * Why: shared counters, caches, or long-lived objects without globals.
+ * Analogy: a hotel room key card tied to your whole stay (static) vs
+ * a day pass thrown away every night (automatic).
  */
+
 #include <iostream>
 using std::cout;
 
@@ -17,34 +22,57 @@ class Checker {
 void fn();
 int main() {
 
-    fn(); // starts by 0 so prints zero and becomes 1
+    // ----------------------------------------------------
+    // STEP 1: Call fn() once — the static counter starts at 0
+    // >>> Compile and run as-is. Prints "Val :0".
+    // ----------------------------------------------------
+    fn();
+
+    // ----------------------------------------------------
+    // STEP 2: Call it three more times — the value persists
+    // >>> UNCOMMENT the block below, then compile and run.
+    // >>> Observe: Val prints 1, 2, 3 — `val` was initialized once
+    // >>> and survives between calls; each call just increments it.
+    // >>> (A normal local int would restart at 0 on EVERY call.)
+    // ----------------------------------------------------
+    /*
     fn(); // value becomes 1
     fn(); // value becomes 2
     fn(); // value becomes 3
+    */
 
-    // Static keyword with classes
+    // ----------------------------------------------------
+    // STEP 3: Static object lifetime — outlives its scope
+    // >>> UNCOMMENT the block below, then compile and run.
+    // >>> Observe the ORDER of messages:
+    // >>>   constructor   -> when the if-block is entered
+    // >>>   End of main fnc
+    // >>>   destructor    -> only at program end, AFTER main's last
+    // >>>                    line, because `static` extended obj's
+    // >>>                    lifetime to the whole program.
+    // ----------------------------------------------------
+    /*
     if (true) {
-        static Checker obj; // when you run this code you will get see
-        // constructor
-        // End of main fnc
-        // Destructor
-
-        // Without static
-        // constructor
-        // destructor
-        // End of main fnc
-
-        // Conclusion
-        // The static variable created in classes shared acrsoss all other classes and objects
-        // and it remains its memory until the main function is executed
+        static Checker obj;
     }
+    */
 
     cout << "End of main fnc\n";
     return 0;
 }
+
+// ----------------------------------------------------
+// STEP 4: EXPERIMENT — drop the keyword
+// >>> Remove `static` from the Checker object in STEP 3 and run again.
+// >>> EXPECTED order: constructor, destructor, End of main fnc —
+// >>> an automatic object dies the moment its scope closes.
+// >>> Conclusion: static members/objects are created once, are shared
+// >>> across the program, and stay alive until main() finishes.
+// ----------------------------------------------------
+
 void fn() {
 
-    static int val = 0;             // static keyword preserves the variable in memory even function terminates
+    static int val = 0;             // static keyword preserves the variable in memory even after the function terminates
     cout << "Val :" << val << '\n'; // print 0
     val++;                          // increase by 1
 }

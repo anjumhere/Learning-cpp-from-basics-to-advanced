@@ -1,17 +1,14 @@
 /*
- * ----------------Copy Constructor--------------------
- *  A copy constructor is a special constructor , used to copy the properties of
- * one object into another.
- *
- *  -----------------Copy Constructor types ------------
- *  1. Shallow Copy:> A shallow copy of an object copies all the member values
- * from one object to another.
- *  2. Deep Copy:> A deep copy of an object not only copies the member values
- * from an object but also copies the dynamically allocated member that members
- * point to.
- *
- * The default copy constructor creates a shallow of an object.
- *
+ * CONCEPT: Copy Constructor — Deep vs Shallow
+ * A copy constructor creates a new object from an existing one.
+ *   Shallow copy -> copies member VALUES, including pointer values,
+ *                   so both objects end up sharing the same heap memory.
+ *   Deep copy    -> also allocates new heap memory and copies what
+ *                   the pointers POINT TO, so each object owns its data.
+ * The compiler-generated copy constructor is shallow — dangerous when
+ * a class manages heap memory (two destructors would free it twice).
+ * Analogy: shallow = photocopying a house key (both keys open the SAME
+ * door); deep = building an identical second house with its own key.
  */
 
 #include <iostream>
@@ -76,17 +73,43 @@ class Student {
         cout << "CGPA :" << *cgpaptr << '\n';
     }
 };
+
 int main() {
 
+    // ----------------------------------------------------
+    // STEP 1: Create the original object on the heap-backed class
+    // >>> Compile and run as-is. s1 owns its own heap double
+    // >>> holding 3.8. At shutdown, ONE destructor runs for s1.
+    // ----------------------------------------------------
     Student s1("Anjum", 3.8);
+    s1.getDetails();
 
-    // copy constructor
+    // ----------------------------------------------------
+    // STEP 2: Deep-copy s1, then change ONLY the copy
+    // >>> UNCOMMENT the block below, then compile and run.
+    // >>> Observe: s2's CGPA becomes 5.5 while s1 still shows 3.8 —
+    // >>> the deep copy gave s2 its OWN heap double. Also watch TWO
+    // >>> destructors fire at shutdown, each freeing separate memory.
+    // ----------------------------------------------------
+    /*
     Student s2(s1);
 
     *(s2.cgpaptr) = 5.5;
     s1.getDetails();
     s2.name = "Neha";
     s2.getDetails();
+    */
+
+    // ----------------------------------------------------
+    // STEP 3: EXPERIMENT — swap deep copy for shallow copy
+    // >>> In the class above: comment out the deep copy constructor,
+    // >>> un-comment the shallow one, then re-enable STEP 2 and run.
+    // >>> EXPECTED: changing s2's CGPA now ALSO corrupts s1 (they share
+    // >>> one heap double), and at shutdown both destructors `delete`
+    // >>> the same address — undefined behavior/crash. This is exactly
+    // >>> the bug deep copies exist to prevent. Restore the deep copy
+    // >>> afterwards so the file behaves again.
+    // ----------------------------------------------------
 
     return 0;
 }
