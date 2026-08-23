@@ -1,3 +1,12 @@
+/*
+ * CONCEPT: Pointer to Pointer
+ * A pointer can store the address of another pointer (int **pp).
+ * Each * peels off one layer: *pp is the inner pointer, **pp is the
+ * final value. Used for out-parameters, 2-D arrays, and linked data
+ * structures that need to move their head pointer around.
+ * Analogy: a sticky note holding the location of an envelope, where
+ * the envelope holds a second note naming the treasure.
+ */
 #include <iostream>
 
 using std::cout;
@@ -17,11 +26,9 @@ int main() {
    * ----------------------------------------------------------------
    */
 
-  /*
-   * ----------------------------------------------------------------
-   * Pointer to pointer
-   * ----------------------------------------------------------------
-   */
+  // ----------------------------------------------------
+  // STEP 1: One variable, two levels of addresses (active — compile & run as-is)
+  // ----------------------------------------------------
   int marks = 100;
 
   cout << "Dereferenced marks are =======>" << *(&marks) << '\n';
@@ -31,12 +38,6 @@ int main() {
 
   // second pointer (i.e. pointer to pointer)
   int **point2 = &point;
-
-  /*
-   * **point2 = 200; // *point holds the address of marks, and
-   * point2 holds the address of point — this is how we can access
-   * and modify the value of marks indirectly.
-   */
 
   cout << "The value of marks is = " << marks << '\n';
   cout << "The address of marks in pointer1 is = " << point << '\n';
@@ -49,11 +50,27 @@ int main() {
   cout << '\n';
   cout << '\n';
 
+  // ----------------------------------------------------
+  // STEP 2: Modify marks through TWO hops
+  // >>> UNCOMMENT the block below, then compile and run.
+  // >>> Observe: writing **point2 changes marks itself — two dereferences
+  //     land all the way back at the original variable.
+  // ----------------------------------------------------
   /*
-   * ----------------------------------------------------------------
-   * Predict the output
-   * ----------------------------------------------------------------
-   */
+  **point2 = 200; // *point holds the address of marks, and
+                  // point2 holds the address of point — this is how we can access
+                  // and modify the value of marks indirectly.
+
+  cout << "The value of marks is = " << marks << '\n';
+  */
+
+  // ----------------------------------------------------
+  // STEP 3: Predict the output
+  // >>> UNCOMMENT the block below, then compile and run.
+  // >>> Observe: check your predictions! *p and **q both give 5, while p,
+  //     *q, and &p are three different addresses in the chain.
+  // ----------------------------------------------------
+  /*
   int a = 5;
   int *p = &a;
   int **q = &p;
@@ -79,6 +96,7 @@ int main() {
                       // same way q holds an address of its own
 
   cout << "The value of the pointer at this index is = " << '\n';
+  */
 
   return 0;
 }
