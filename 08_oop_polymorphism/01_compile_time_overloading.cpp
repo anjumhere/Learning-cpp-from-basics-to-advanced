@@ -1,19 +1,13 @@
 /*
- * |------------ Polymorphism ---------------------------|
- *
- * Poly  = Multiple
- * Morph = Forms
- *
- * Polymorphism is the ability of an object to take different forms or
- * behave in different ways, depending upon the context in which they
- * are used.
- */
-
-/*
- * There are two types of polymorphism:
- * 1. Compile time polymorphism (constructor overloading and function
- *    overloading are examples of compile time polymorphism)
- * 2. Run time polymorphism => See in oop_polymorphism_02.cpp
+ * CONCEPT: Compile-Time Polymorphism (Overloading)
+ * Poly = multiple, morph = forms: polymorphism lets one name take different
+ * forms depending on context. There are two types of polymorphism:
+ * 1. Compile time (constructor overloading and function overloading)
+ * 2. Run time => see 02_runtime_overriding.cpp
+ * Here the COMPILER itself picks which version runs, by matching argument
+ * types before the program ever starts.
+ * Analogy: the verb "withdraw" differs at an ATM vs a bank counter -- the
+ * context (the arguments) selects the behaviour.
  */
 
 #include <iostream>
@@ -46,19 +40,36 @@ public:
 };
 
 int main() {
-  // Compile time Polymorphism
-  // 1. Constructor overloading
-  // Person p1("name"); // depends on context; if left empty, calls the
-  // non-parameterized constructor.
-  // Person p1; // calls the non-parameterized constructor.
 
+  // ----------------------------------------------------
+  // STEP 1: Constructor overloading -- one class, many constructors (active — compile & run as-is)
+  // ----------------------------------------------------
   Person p1(23);      // calls the constructor with age
   Person p2("Anjum"); // calls the constructor with name
 
-  // 2. Function overloading
-  // Multiple functions with the same name but different parameters
+  // ----------------------------------------------------
+  // STEP 2: Third form -- no arguments at all
+  // >>> UNCOMMENT the block below, then compile and run.
+  // >>> Observe: an empty declaration selects the non-parameterized
+  // >>> overload; "depends on context" simply means the compiler matches
+  // >>> whatever argument list YOU pass -- all decided at compile time.
+  // ----------------------------------------------------
+  /*
+  Person p3; // calls the non-parameterized constructor.
+  */
+
+  // ----------------------------------------------------
+  // STEP 3: Function overloading -- one name, two bodies
+  // >>> UNCOMMENT the block below, then compile and run.
+  // >>> Observe: identical call syntax; the char vs int argument picks the
+  // >>> matching show(). Punchline: EVERY choice in this file was made
+  // >>> before running -- next lesson shows a case where that same
+  // >>> compile-time rule silently picks a version you did not want.
+  // ----------------------------------------------------
+  /*
   p1.show('H');
-  // p1.show(12);
+  p1.show(12);
+  */
 
   return 0;
 }
