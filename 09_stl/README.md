@@ -2,15 +2,16 @@
 
 The Standard Template Library: containers that manage their own memory.
 Goal: replace fixed-size arrays with `vector` and master its core
-operations — growth, capacity, element access, and the different ways
-to initialize one.
+operations — growth, capacity, element access, the different ways to
+initialize one, and traversal with iterators.
 
 ## Files (in learning order)
 
 | # | File | What it teaches |
 |---|------|-----------------|
 | 01 | `01_vector_basics.cpp` | Why vectors replace raw arrays; `push_back`/`pop_back`; `size()` vs `capacity()` and capacity doubling (`at()`, `[]`, `front()`, `back()` included) |
-| 02 | `02_more_about_vectors.cpp` | The ways to create a vector: fill constructor, brace-init list, and copy constructor |
+| 02 | `02_more_about_vectors.cpp` | The ways to create a vector: fill constructor, brace-init list, and copy constructor; plus `erase`, `insert`, `clear`, `empty` |
+| 03 | `03_vector_iterators.cpp` | Pointer-like iterators over a vector: forward loops with `begin()`/`end()`, backward loops with `rbegin()`/`rend()`, and `auto` for shorter types |
 
 ## Prerequisites
 

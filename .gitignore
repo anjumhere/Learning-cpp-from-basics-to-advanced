@@ -15,3 +15,4 @@ test
 
 # compiled binary accidentally committed with the stl file
 09_stl/02_more_about_vectors
+09_stl/03_vector_iterators
