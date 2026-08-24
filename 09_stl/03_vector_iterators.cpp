@@ -46,6 +46,38 @@ int main() {
      * | | Loop 5| 0x110           | True                    | 5                        | Prints "5=> ", jumps to 0x114
      * | | End  | 0x114 (end)      | **False**               | -                        | Loop terminates |
      */
-    cout << '\n';
+    cout << '\n' << '\n';
+
+    vector<int>::reverse_iterator itr;
+    /* This is a reverse-iterator , which iterators in reverse order at itr++
+     */
+
+    for (itr = vect.rbegin(); itr != vect.rend(); itr++) {
+        cout << *(itr) << " ==> ";
+    }
+
+    /*
+     * Here we have got 2 new terms
+     * rbegin() and rend();
+     * rbegin() => points to the special iterator past the last element , unlike begin() which points to the first
+     * element in vector.
+     * rend() => point to the special iterator before the first element , unlike end which points to the
+     * special iterator past the last element.
+     * ==> rest of the loop working is same as above
+     */
+
+    /*------------------------------------------------------------------------------------------------
+        * Using auto keyword
+    if we write, for(vector<int>::reverse_iterator itr = vect.rbegin()); it would be very confusion right
+    so we can use auto keyword which automatically detects the iterator so we don't  to initialize the
+    iterator orr reviser_iterator.
+        */
+
+    /*
+    for (auto itrr = vect.rbegin(); itrr != vect.rend(); itrr++) {
+        cout << *(itrr) << " ";
+    }
+
+    */
     return 0;
 }
