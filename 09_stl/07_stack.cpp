@@ -1,80 +1,93 @@
 /*
-============================================================================
- STACK (LIFO - Last In, First Out)
-============================================================================
- A stack is a non-sequential container in which elements are inserted
- and removed only from one end, called the "top".
- Analogy: a stack of books/plates — you can only add or remove from
- the top; you cannot access items in the middle without removing
- the ones above them first.
-                         TOP OF STACK
-                              |
-                              v
-                        +-----------+
-                        | element 4 |   <-- last pushed / next to pop
-                        +-----------+
-                        | element 3 |
-                        +-----------+
-                        | element 2 |
-                        +-----------+
-                        | element 1 |   <-- first pushed
-                        +-----------+
-                          (bottom)
- Push  -> inserts a new element on top      (element 4 was pushed last)
- Pop   -> removes the element on top        (element 4 leaves first)
-----------------------------------------------------------------------------
- Member functions of std::stack
-----------------------------------------------------------------------------
- 1. push(val)     - insert an element at the top
- 2. emplace(args) - construct an element in-place at the top
- 3. top()         - access the top element
- 4. pop()         - remove the top element
- 5. size()        - number of elements currently in the stack
- 6. empty()       - check whether the stack is empty
- 7. swap(other)   - exchange contents with another stack
-============================================================================
-*/
+ * CONCEPT: std::stack — Last In, First Out (LIFO)
+ * std::stack is an adapter container that wraps another container (by
+ * default deque) and exposes only push, pop, and top — enforcing a strict
+ * LIFO (Last In, First Out) access pattern. Think of a stack of plates:
+ * you can only add or remove from the top; accessing anything below
+ * requires removing everything above it first.
+ *
+ * Why use stack instead of just using a vector/deque directly?
+ * Because stack *restricts* the interface, making the LIFO intent
+ * explicit and preventing accidental middle-of-container operations.
+ *
+ * Member functions:
+ *   push(val)     — insert an element on top
+ *   emplace(args) — construct an element in-place at the top
+ *   top()         — access (but not remove) the top element
+ *   pop()         — remove the top element (no return value)
+ *   size()        — number of elements
+ *   empty()       — true if size == 0
+ *   swap(other)   — exchange contents with another stack
+ */
+
 #include <iostream>
 #include <stack>
+
 using std::cout;
 using std::stack;
+
 int main() {
+
+    /*
+     * ----------------------------------------------------
+     * STEP 1: Push elements and read them back
+     * Elements come out in reverse order of insertion (LIFO).
+     * While the stack is not empty, top() reads the last pushed
+     * element and pop() removes it.
+     * ----------------------------------------------------
+     */
     stack<int> s;
-    s.push(1);                               // push -> insert element at top
-    s.push(2);                               // push
-    s.push(3);                               // push
-    s.push(4);                               // push
-    s.push(5);                               // push
-    s.push(6);                               // push
-    cout << "size ==> " << s.size() << '\n'; // size -> current element count
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.push(4);
+    s.push(5);
+    s.push(6);
 
-    while (!s.empty()) { // empty -> loop condition, checks if stack has elements
-        cout << s.top(); // top -> access element at the top
-        cout << " ";
-        s.pop(); // pop -> remove element at the top
+    cout << "Step 1 — push 1..6, then pop all (LIFO order):\n";
+    cout << "size ==> " << s.size() << '\n';
+
+    while (!s.empty()) {
+        cout << s.top() << " ";
+        s.pop();
     }
-    cout << "\n\n";
+    cout << '\n' << '\n';
 
-    s.empty() ? cout << "yes stack is empty" : cout << "stack is not empty"; // empty
-    cout << "\n\n";
+    /*
+     * ----------------------------------------------------
+     * STEP 2: empty() — check if the stack has elements
+     * Returns true when size == 0, false otherwise.
+     * ----------------------------------------------------
+     */
+    cout << "Step 2 — empty check:\n";
+    cout << (s.empty() ? "yes stack is empty" : "stack is not empty") << '\n';
+    cout << '\n';
 
-    // swap example
+    /*
+     * ----------------------------------------------------
+     * STEP 3: swap() — exchange contents of two stacks
+     * swap() exchanges the entire contents of two stacks in O(1)
+     * time (pointer swap, not element-by-element copy).
+     * ----------------------------------------------------
+     */
     stack<int> a;
     stack<int> b;
-    a.push(10);  // push
-    a.push(20);  // push
-    a.push(30);  // push
-    b.push(100); // push
-    b.push(200); // push
+    a.push(10);
+    a.push(20);
+    a.push(30);
+    b.push(100);
+    b.push(200);
 
-    cout << "before swap ==> a.size() = " << a.size() << ", b.size() = " << b.size() << '\n';
+    cout << "Step 3 — swap:\n";
+    cout << "before swap: a.size() = " << a.size()
+         << ", b.size() = " << b.size() << '\n';
 
-    a.swap(b); // swap -> exchanges contents of a and b
+    a.swap(b);
 
-    cout << "after swap ==> a.size() = " << a.size() << ", b.size() = " << b.size() << '\n';
-
-    cout << "a top ==> " << a.top() << '\n'; // top
-    cout << "b top ==> " << b.top() << '\n'; // top
+    cout << "after swap:  a.size() = " << a.size()
+         << ", b.size() = " << b.size() << '\n';
+    cout << "a top ==> " << a.top() << '\n';
+    cout << "b top ==> " << b.top() << '\n';
 
     return 0;
 }
