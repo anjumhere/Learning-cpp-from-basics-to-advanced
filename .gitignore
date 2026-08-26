@@ -13,6 +13,10 @@ static_keyword
 stl
 test
 
-# compiled binary accidentally committed with the stl file
+# compiled binaries accidentally committed with stl files
 09_stl/02_more_about_vectors
 09_stl/03_vector_iterators
+09_stl/04_list_containers
+09_stl/05_deque_container
+09_stl/06_pair_container
+09_stl/07_stack
