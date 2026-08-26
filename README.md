@@ -31,7 +31,7 @@ explaining the idea before any code.
 | 06 | [`06_oop_fundamentals`](06_oop_fundamentals) | Classes, access modifiers, encapsulation, constructors, copy/deep-vs-shallow, `static` |
 | 07 | [`07_oop_inheritance`](07_oop_inheritance) | Single, multi-level, and multiple inheritance; ctor/dtor order |
 | 08 | [`08_oop_polymorphism`](08_oop_polymorphism) | Overloading vs overriding, `virtual` functions, abstract classes |
-| 09 | [`09_stl`](09_stl) | `std::vector`: growth, capacity, access, and initialization styles |
+| 09 | [`09_stl`](09_stl) | `std::vector`, `list`, `deque`, `pair`, `stack`, `queue` — containers, iterators, and adapter patterns |
 | 10 | [`10_projects`](10_projects) | Applied mini-projects: games, banking system, Luhn validator, debugging drills |
 
 Each folder contains its own `README.md` with a per-file guide and its
