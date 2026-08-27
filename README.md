@@ -1,13 +1,13 @@
 # C++ — From Basics to Advanced
 
-A self-paced C++ learning path: 56 standalone programs arranged as a
+A self-paced C++ learning path: 62 standalone programs arranged as a
 numbered course, taking you from your first `Hello, world!` all the way
 to object-oriented design, virtual functions, the STL, and applied
 mini-projects. This is a **sequential, book-style path**: read and work
 through it file-by-file, folder-by-folder, in order — each file assumes
 only what the earlier files already taught.
 
-> ✅ **Build status:** all 56 files compile warning-free with
+> ✅ **Build status:** all 62 files compile warning-free with
 > `g++ -std=c++17 -Wall` and were smoke-tested by execution.
 
 ## How to use this repository
