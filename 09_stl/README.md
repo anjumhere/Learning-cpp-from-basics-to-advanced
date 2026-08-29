@@ -19,6 +19,8 @@ containers (stack and queue) that enforce specific access patterns.
 | 06 | `06_pair_container.cpp` | `std::pair`: storing two values of different types, nested pairs, vectors of pairs, `push_back` vs `emplace_back` |
 | 07 | `07_stack.cpp` | `std::stack` adapter: LIFO access pattern, `push`/`pop`/`top`, `empty()`, `swap()` |
 | 08 | `08_queue.cpp` | `std::queue` adapter: FIFO access pattern, `push`/`pop`/`front`/`back`, `empty()`, `swap()` |
+| 09 | `10_map.cpp` | `std::map` (sorted key-value pairs): `insert`/`emplace`, `count`, `erase`, `find`, `[]` access — plus `multimap` for duplicate keys and `unordered_map` for unsorted storage |
+| 10 | `11_set.cpp` | `std::set` storing unique, sorted values: `insert`, `size`, plus `lower_bound()` and `upper_bound()` and why dereferencing `end()` is undefined behavior |
 
 ## Prerequisites
 
