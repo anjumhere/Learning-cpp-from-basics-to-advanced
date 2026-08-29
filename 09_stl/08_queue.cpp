@@ -81,13 +81,11 @@ int main() {
     b.push(200);
 
     cout << "Step 3 — swap:\n";
-    cout << "before swap: a.size() = " << a.size()
-         << ", b.size() = " << b.size() << '\n';
+    cout << "before swap: a.size() = " << a.size() << ", b.size() = " << b.size() << '\n';
 
     a.swap(b);
 
-    cout << "after swap:  a.size() = " << a.size()
-         << ", b.size() = " << b.size() << '\n';
+    cout << "after swap:  a.size() = " << a.size() << ", b.size() = " << b.size() << '\n';
     cout << "a front ==> " << a.front() << '\n';
     cout << "b front ==> " << b.front() << '\n';
 
