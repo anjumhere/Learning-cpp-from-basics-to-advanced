@@ -1,16 +1,23 @@
 #include <iostream>
-#include <vector>
+#include <queue>
 
 using std::cout;
-using std::vector;
+using std::queue;
 
 int main() {
 
-    vector<int> vec = {1, 2, 3, 4, 5};
+    queue<int> q;
 
-    for (auto itr : vec) {
-        cout << itr << " =>> ";
-    }
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.push(5);
+    q.push(6);
 
+    queue<int> p;
+    p.swap(q);
+    cout << p.size();
+    cout << q.size();
     return 0;
 }
