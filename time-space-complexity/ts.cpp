@@ -8,6 +8,22 @@ int main() {
   cin >> n;
 
   /*
+   * Time Complexity: O(1)
+   * -----------------------
+   * This block does a fixed number of operations no matter
+   * what n is. Whether n = 3 or n = 3,000,000, this still
+   * runs exactly ONE print — it never depends on n at all.
+   *
+   * n = 3       -> 1 print
+   * n = 10      -> 1 print
+   * n = 1000000 -> 1 print
+   *
+   * Since the operation count stays constant regardless of
+   * input size, this is O(1) — constant time.
+   */
+  cout << "This line always runs once, no matter the value of n\n";
+
+  /*
    * Time Complexity: O(n)
    * ----------------------
    * The loop runs from i = 0 to i = n-1, so it executes
