@@ -25,6 +25,30 @@ int main() {
   for (int i = 0; i < n; i++) {
     cout << "hi";
   }
+  cout << '\n';
+
+  /*
+   * Time Complexity: O(n^2)
+   * ------------------------
+   * Outer loop runs n times (i = 0 to n-1).
+   * Inner loop ALSO runs n times for EVERY single outer
+   * iteration (j = 0 to n-1), not a shrinking/growing amount.
+   *
+   * n = 3 -> outer runs 3 times, inner runs 3 times EACH round
+   *          -> total prints = 3 x 3 = 9
+   * n = 5 -> total prints = 5 x 5 = 25
+   * n = 10 -> total prints = 10 x 10 = 100
+   *
+   * Total operations = n * n = n^2.
+   * Since work grows as the SQUARE of input size, this is
+   * O(n^2) — quadratic time.
+   */
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      cout << "hi";
+    }
+    cout << '\n';
+  }
 
   return 0;
 }
