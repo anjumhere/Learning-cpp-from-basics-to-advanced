@@ -23,3 +23,10 @@ caller's variable, and how to allocate/free dynamic memory safely.
 
 Complete [`01_basics`](../01_basics) and [`02_arrays`](../02_arrays) first —
 pointer arithmetic only makes sense once arrays are familiar.
+
+## Compile & run
+
+```bash
+g++ -std=c++17 03_pointers_and_memory/09_dynamic_memory_new_delete.cpp -o pointers
+./pointers
+```
