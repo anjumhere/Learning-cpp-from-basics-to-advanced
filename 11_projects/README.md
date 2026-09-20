@@ -1,4 +1,4 @@
-# 10 — Projects
+# 11 — Projects
 
 Applied mini-projects that combine everything from folders 01–09.
 Goal: read complete programs as designs, then extend them yourself via
@@ -23,3 +23,10 @@ the commented challenges (uncomment, modify, recompile).
 
 All of folders 01–09. Project 06 additionally requires having studied
 project 05 (it is the broken version of the same algorithm).
+
+## Compile & run
+
+```bash
+g++ -std=c++17 11_projects/01_rock_paper_scissors.cpp -o rps
+./rps
+```
