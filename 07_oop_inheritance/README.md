@@ -27,3 +27,10 @@ How base-class member access maps into a derived class:
 | **Private**       | Not Inherited | Not Inherited  | Not Inherited |
 | **Protected**     | Private       | Protected      | Protected     |
 | **Public**        | Private       | Protected      | Public        |
+
+## Compile & run
+
+```bash
+g++ -std=c++17 07_oop_inheritance/02_multilevel_inheritance.cpp -o inheritance
+./inheritance
+```
