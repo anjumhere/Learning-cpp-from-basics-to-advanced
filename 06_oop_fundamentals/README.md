@@ -21,3 +21,10 @@ members.
 Complete folders [`01_basics`](../01_basics) through
 [`05_structs`](../05_structs). Constructors and destructors assume you
 have seen dynamic memory ([`03_pointers_and_memory`](../03_pointers_and_memory)).
+
+## Compile & run
+
+```bash
+g++ -std=c++17 06_oop_fundamentals/04_constructors_and_this.cpp -o oop
+./oop
+```
