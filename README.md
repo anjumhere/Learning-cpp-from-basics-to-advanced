@@ -1,13 +1,14 @@
 # C++ — From Basics to Advanced
 
-A self-paced C++ learning path: 64 standalone programs arranged as a
-numbered course, taking you from your first `Hello, world!` all the way
-to object-oriented design, virtual functions, the STL, and applied
-mini-projects. This is a **sequential, book-style path**: read and work
-through it file-by-file, folder-by-folder, in order — each file assumes
-only what the earlier files already taught.
+A self-paced C++ learning path: 69 standalone program files arranged as
+a numbered course, taking you from your first `Hello, world!` all the
+way to object-oriented design, virtual functions, the STL, applied
+mini-projects, and beyond into time/space complexity and algorithms.
+This is a **sequential, book-style path**: read and work through it
+file-by-file, folder-by-folder, in order — each file assumes only what
+the earlier files already taught.
 
-> ✅ **Build status:** all 64 files compile warning-free with
+> ✅ **Build status:** all 69 `.cpp` files compile warning-free with
 > `g++ -std=c++17 -Wall` and were smoke-tested by execution.
 
 ## How to use this repository
@@ -32,7 +33,15 @@ explaining the idea before any code.
 | 07 | [`07_oop_inheritance`](07_oop_inheritance) | Single, multi-level, and multiple inheritance; ctor/dtor order |
 | 08 | [`08_oop_polymorphism`](08_oop_polymorphism) | Overloading vs overriding, `virtual` functions, abstract classes |
 | 09 | [`09_stl`](09_stl) | `std::vector`, `list`, `deque`, `pair`, `stack`, `queue`, `map`, `set` — containers, iterators, and adapter patterns |
-| 10 | [`10_projects`](10_projects) | Applied mini-projects: games, banking system, Luhn validator, debugging drills |
+| 10 | [`10_algorithms`](10_algorithms) | First taste of the `<algorithm>` header: sorting arrays and vectors up and down with `std::sort` |
+| 11 | [`11_projects`](11_projects) | Applied mini-projects: games, banking system, Luhn validator, debugging drills |
+
+Additional, non-sequential practice:
+
+| Folder | Topic |
+|--------|-------|
+| [`time-space-complexity`](time-space-complexity) | Notes and code on Big O — `O(1)`, `O(n)`, `O(n²)` with worked examples |
+| [`understanding-loops`](understanding-loops) | Loose sandbox: nested-loop symbol grids and triangle patterns |
 
 Each folder contains its own `README.md` with a per-file guide and its
 prerequisites — work through folders in numeric order unless a folder's
@@ -81,7 +90,7 @@ g++ -std=c++17 <filename>.cpp -o <output_executable_name>
 Example — compiling and running the Rock-Paper-Scissors project:
 
 ```bash
-g++ -std=c++17 10_projects/01_rock_paper_scissors.cpp -o rps
+g++ -std=c++17 11_projects/01_rock_paper_scissors.cpp -o rps
 ./rps
 ```
 
