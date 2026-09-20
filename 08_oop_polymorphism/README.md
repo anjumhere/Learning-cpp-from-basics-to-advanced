@@ -20,3 +20,10 @@ Complete [`07_oop_inheritance`](../07_oop_inheritance) first —
 overriding and virtual dispatch only exist between base and derived
 classes. Constructors ([`06_oop_fundamentals`](../06_oop_fundamentals))
 are assumed known.
+
+## Compile & run
+
+```bash
+g++ -std=c++17 08_oop_polymorphism/03_virtual_functions.cpp -o polymorph
+./polymorph
+```
