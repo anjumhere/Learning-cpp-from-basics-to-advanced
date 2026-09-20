@@ -4,8 +4,8 @@ A collection of C++ examples and notes for understanding **time complexity** and
 
 ## Contents
 
-- `notes.md` — Definitions of time complexity and space complexity, step-by-step methods for calculating each, and worked examples with real input/output counts.
-- Example `.cpp` files demonstrating different complexity classes (`O(1)`, `O(n)`, `O(n^2)`, and more to be added), each annotated with multi-line comments explaining _why_ the complexity is what it is.
+- `NOTES.md` — Definitions of time complexity and space complexity, step-by-step methods for calculating each, and worked examples with real input/output counts.
+- `ts.cpp` — One annotated program that demonstrates `O(1)`, `O(n)`, and `O(n²)` side by side, with multi-line comments explaining _why_ each block has the complexity it does.
 
 ## Purpose
 
@@ -25,3 +25,10 @@ Planned additions:
 - O(2ⁿ) and O(n!)
 - Space complexity worked examples
 - Best / Average / Worst case comparisons
+
+## Compile & run
+
+```bash
+g++ -std=c++17 time-space-complexity/ts.cpp -o ts
+./ts
+```
