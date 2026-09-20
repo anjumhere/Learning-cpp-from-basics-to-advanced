@@ -26,3 +26,10 @@ small complete programs before moving on to data structures.
 
 None — start here. Files 04–06 teach branching and looping; everything
 from 07 onward combines them into small applications.
+
+## Compile & run
+
+```bash
+g++ -std=c++17 01_basics/12_function_basics.cpp -o basics
+./basics
+```
