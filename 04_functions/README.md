@@ -18,3 +18,10 @@ Complete [`01_basics`](../01_basics) — file 01 builds directly on its
 function primer (`12_function_basics.cpp`). Pair with
 [`03_pointers_and_memory`](../03_pointers_and_memory) for the full
 pass-by-value vs pass-by-reference picture.
+
+## Compile & run
+
+```bash
+g++ -std=c++17 04_functions/03_recursion_factorial.cpp -o functions
+./functions
+```
