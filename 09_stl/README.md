@@ -27,3 +27,10 @@ containers (stack and queue) that enforce specific access patterns.
 Complete [`02_arrays`](../02_arrays) (vectors are the dynamic answer to
 arrays) and ideally [`03_pointers_and_memory`](../03_pointers_and_memory)
 (capacity growth is easier to picture once you know about the heap).
+
+## Compile & run
+
+```bash
+g++ -std=c++17 09_stl/01_vector_basics.cpp -o stl
+./stl
+```
