@@ -14,3 +14,10 @@ loose variables to classes.
 
 Complete [`01_basics`](../01_basics). Structs are the stepping stone to
 [`06_oop_fundamentals`](../06_oop_fundamentals).
+
+## Compile & run
+
+```bash
+g++ -std=c++17 05_structs/01_struct_basics.cpp -o structs
+./structs
+```
