@@ -20,3 +20,10 @@ fill, traverse, search, and sort arrays — and learn why index math
 Complete [`01_basics`](../01_basics) first — arrays lean on variables,
 loops, and the function primer (`12_function_basics.cpp`), which files
 04–06 use heavily.
+
+## Compile & run
+
+```bash
+g++ -std=c++17 02_arrays/06_bubble_sort.cpp -o arrays
+./arrays
+```
